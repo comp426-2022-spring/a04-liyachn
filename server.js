@@ -115,6 +115,7 @@ if (args.debug == true)
         app.get('/app/log/access', (req, res) => {
             const stmt = logdb.prepare('SELECT * FROM accesslog').all() // log all data in accesslog
             res.status(200).json(stmt)
+            res.type("text/plain")
         });
     })
 
